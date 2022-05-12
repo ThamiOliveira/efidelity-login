@@ -1,6 +1,7 @@
 /*eslint-disable*/
 import React from "react";
 import { Link } from "react-router-dom";
+import { HiOutlineLogout } from "react-icons/hi";
 
 // components
 
@@ -15,7 +16,8 @@ export default function Navbar(props) {
               className="text-white text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
               to="/"
             >
-              Efidelity
+              <img src={require("assets/img/logo-e-fidelity.jpg").default}>
+              </img>
             </Link>
             <button
               className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
@@ -41,9 +43,8 @@ export default function Navbar(props) {
                   href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdemos.creative-tim.com%2Fnotus-react%2F%23%2F"
                   target="_blank"
                 >
-                  <Link to="/auth/login" className="text-blueGray-200">
-                    <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
-                    Sair
+                  <Link to="/auth/login">
+                   <HiOutlineLogout size={30}/>
                   </Link>
                 </a>
               </li>

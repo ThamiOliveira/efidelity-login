@@ -1120,6 +1120,12 @@ select {
   background-color: rgba(125, 211, 252, var(--tw-bg-opacity));
 }
 
+.bg-lightBlue-350 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(191, 224, 255, var(--tw-bg-opacity));
+}
+
+
 .bg-lightBlue-400 {
   --tw-bg-opacity: 1;
   background-color: rgba(56, 189, 248, var(--tw-bg-opacity));
@@ -1238,6 +1244,11 @@ select {
 .bg-blueGray-800 {
   --tw-bg-opacity: 1;
   background-color: rgba(30, 41, 59, var(--tw-bg-opacity));
+}
+
+.bg-zinc-300{
+  --tw-bg-opacity: 1;
+  background-color: rgba(161 ,161 ,170, var(--tw-bg-opacity));
 }
 
 .active\:bg-indigo-600:active {
@@ -1605,6 +1616,14 @@ select {
   line-height: 1;
 }
 
+.text-50-px{
+  font-size: 50px;
+}
+
+.text-20-px{
+  font-size: 20px;
+}
+
 .leading-none {
   line-height: 1;
 }
@@ -1798,6 +1817,10 @@ select {
   margin-top: 12rem;
 }
 
+.mt-64 {
+  margin-top: 14rem;
+}
+
 .mr-auto {
   margin-right: auto;
 }
@@ -1846,6 +1869,10 @@ select {
   max-height: 860px;
 }
 
+.max-h-230-px {
+  max-height: 230px;
+}
+
 .max-w-full {
   max-width: 100%;
 }
@@ -1884,6 +1911,10 @@ select {
 
 .min-h-screen-75 {
   min-height: 75vh;
+}
+
+.min-h-230-px {
+  min-height: 230px;
 }
 
 .min-w-0 {
