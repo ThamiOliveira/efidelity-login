@@ -14,7 +14,7 @@ export default function Auth() {
       {/* <Navbar transparent /> */}
       <main>
           <div
-            className="absolute top-0 w-full h-full bg-zinc-300 bg-no-repeat bg-full"
+            className="fixed top-0 w-full h-full bg-zinc-300 bg-no-repeat bg-full"
             style={{
               backgroundImage:
                 "url(" + require("assets/img/register_bg_2.png").default + ")",

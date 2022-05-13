@@ -1,7 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
+
 export default function Login() {
+  const [loginInfo, setloginInfo] = React.useState({
+    email: "",
+    senha: ""
+  });
+
+  const handleChange = (event) => {
+    setloginInfo({ ...loginInfo, [event.target.name]: event.target.value });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(loginInfo);
+  };
+
   return (
     <>
       <div className="container mx-auto px-4 h-full">
@@ -18,9 +34,12 @@ export default function Login() {
                       Email
                     </label>
                     <input
-                      type="email"
+                      type="text"
                       className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       placeholder="Email"
+                      name="email"
+                      value={loginInfo.email}
+                      onChange={handleChange.bind(this)}
                     />
                   </div>
 
@@ -35,6 +54,9 @@ export default function Login() {
                       type="password"
                       className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       placeholder="Senha"
+                      name="senha"
+                      value={loginInfo.senha}
+                      onChange={handleChange.bind(this)}
                     />
                   </div>
                   <hr className="mt-6 border-b-1 border-blueGray-300" />
@@ -70,7 +92,7 @@ export default function Login() {
                     </div>
                   </div>
                   <div className="text-center mt-6">
-                    <Link to="/landing" className="text-blueGray-200">
+                    <Link to="/landing" onClick={() => handleSubmit} className="text-blueGray-200">
                       <button
                         className="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
                         type="button"
@@ -85,16 +107,19 @@ export default function Login() {
             <div className="flex flex-wrap mt-6 relative">
               <div className="w-1/2">
                 <a
-                  href="#pablo"
+                  href="#"
                   onClick={(e) => e.preventDefault()}
                   className="text-blueGray-200"
                 >
-                  <small>Esqueceu sua senha?</small>
                 </a>
               </div>
               <div className="w-1/2 text-right">
                 <Link to="/auth/register" className="text-blueGray-200">
-                  <small>Criar nova conta</small>
+                  <button className="text-white"
+                    type="button"
+                  >
+                    <small>Criar nova conta</small>
+                  </button>
                 </Link>
               </div>
             </div>

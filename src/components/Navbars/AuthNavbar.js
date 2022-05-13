@@ -43,9 +43,6 @@ export default function Navbar(props) {
                   href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdemos.creative-tim.com%2Fnotus-react%2F%23%2F"
                   target="_blank"
                 >
-                  <Link to="/auth/login">
-                   <HiOutlineLogout size={30}/>
-                  </Link>
                 </a>
               </li>
             </ul>
