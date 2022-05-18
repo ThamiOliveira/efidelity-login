@@ -1,9 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link,useHistory } from "react-router-dom";
 
 
 
 export default function Login() {
+  const history = useHistory();
   const [loginInfo, setloginInfo] = React.useState({
     email: "",
     senha: ""
@@ -15,7 +16,7 @@ export default function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(loginInfo);
+    history.push("/dash");
   };
 
   return (
@@ -25,7 +26,7 @@ export default function Login() {
           <div className="w-full lg:w-4/12 px-4 mt-20">
             <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200 border-0">
               <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
-                <form className="mt-5">
+                <form className="mt-5" onSubmit={handleSubmit}>
                   <div className="relative w-full mb-3">
                     <label
                       className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
@@ -92,14 +93,12 @@ export default function Login() {
                     </div>
                   </div>
                   <div className="text-center mt-6">
-                    <Link to="/landing" onClick={() => handleSubmit} className="text-blueGray-200">
-                      <button
+                      <button onClick={handleSubmit.bind(this)}
                         className="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
-                        type="button"
+                        type="submit"
                       >
                         Entrar
                       </button>
-                    </Link>
                   </div>
                 </form>
               </div>

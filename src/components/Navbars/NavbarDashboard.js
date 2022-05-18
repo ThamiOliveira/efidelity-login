@@ -1,12 +1,11 @@
 /*eslint-disable*/
 import React from "react";
 import { Link } from "react-router-dom";
-import { HiOutlineLogout } from "react-icons/hi";
+import { FiLogOut } from "react-icons/fi";
 
 // components
 
-export default function Navbar(props) {
-  const [navbarOpen, setNavbarOpen] = React.useState(false);
+export default function NavbarDashboard(props) {
   return (
     <>
       <nav className="top-0 absolute z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg">
@@ -22,14 +21,12 @@ export default function Navbar(props) {
           </div>
           <div className="flex justify-between">
             <Link
-              to="/auth/login"
+              to="/auth/Landing"
             >
-              <div className="m-4 button-login">Login</div>
-            </Link>
-            <Link
-              to="/auth/register"
-            >
-              <div className="m-4 button-cadastro">Cadastro</div>
+              <div className="m-4 button-login flex flex-row">
+                <FiLogOut className="margin-auto mr-2"></FiLogOut>
+                Sair
+              </div>
             </Link>
           </div>
         </div>
@@ -37,3 +34,5 @@ export default function Navbar(props) {
     </>
   );
 }
+
+
